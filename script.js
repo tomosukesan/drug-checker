@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const apiUrl = 'https://api.dify.ai/v1/workflows/run'; // https://api.dify.ai/v1/workflows/run
-        const apiKey = 'app-NYwepc1jgrbWkVnhhq7skjcj';
+        
 
         const data = {
             inputs: {
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log('Parsed Dify result:', result);
 
             // Difyのレスポンス構造に合わせてtextプロパティを取得
-            const resultText = result?.data?.text || '結果がありませんでした。';
+            const resultText = result?.data?.outputs?.text || '結果がありませんでした。';
 
             const newListItem = document.createElement('li');
             newListItem.textContent = resultText;
